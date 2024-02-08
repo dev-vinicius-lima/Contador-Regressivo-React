@@ -28,3 +28,9 @@ body {
     height: 200px;
     gap: 2rem;
 }
+
+@media (max-width:600px) {
+    .countDown_Container {
+        gap: .5rem;
+    }
+}
