@@ -6,10 +6,14 @@ const useCountDown = (date) => {
   const [second, setSecond] = useState();
 
   const countDown = () => {
-    const countDate = new Date(date).getTime();
-    const now = new Date().getTime();
+    const countDate = new Date(date).toLocaleString('en-US', {
+      timeZone: 'America/Sao_Paulo',
+    });
+    const now = new Date().toLocaleString('en-US', {
+      timeZone: 'America/Sao_Paulo',
+    });
 
-    const interval = countDate - now;
+    const interval = new Date(countDate).getTime() - new Date(now).getTime();
 
     const second = 1000;
     const minute = second * 60;
